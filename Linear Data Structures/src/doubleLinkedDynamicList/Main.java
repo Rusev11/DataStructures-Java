@@ -2,7 +2,7 @@ package doubleLinkedDynamicList;
 
 public class Main {
     public static void main(String[] args) {
-        DynamicList list = new DynamicList();
+        DynamicList<TestClass> list = new DynamicList();
 
 
 //        list.add(1);
@@ -19,5 +19,6 @@ public class Main {
 //        list.remove();
         list.remove(b);
         list.printList();
+        System.out.println(list.contains(b));
     }
 }

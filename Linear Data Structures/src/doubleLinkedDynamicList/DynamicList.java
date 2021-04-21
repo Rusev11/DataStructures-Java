@@ -1,6 +1,6 @@
 package doubleLinkedDynamicList;
 
-public class DynamicList {
+public class DynamicList<T> {
     private Node head;
     private Node tail;
     private int count;
@@ -28,7 +28,7 @@ public class DynamicList {
         }
     }
 
-    public void add(Object item) {
+    public void add(T item) {
         if (head == null) {
             head = new Node(item);
             tail = head;
@@ -94,7 +94,7 @@ public class DynamicList {
 
     }
 
-    public void remove(Object item) {
+    public void remove(T item) {
         if (head == null) {
             System.out.println("The list is empty. Nothing is removed.");
             return;
@@ -120,6 +120,26 @@ public class DynamicList {
                 return;
             }
         }
+    }
+
+    public boolean contains(T item) {
+        if (head == null) {
+            System.out.println("The list is empty.");
+            return false;
+        }
+
+        Node currentNode = head;
+        if (currentNode.element.equals(item)) {
+            return true;
+        }
+
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+            if(currentNode.element.equals(item)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void printList() {
