@@ -5,12 +5,19 @@ public class Main {
         DynamicList list = new DynamicList();
 
 
-        list.add(1);
-        list.add(2);
-        list.add(3);
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+        TestClass a = new TestClass("aaa");
+        TestClass b = new TestClass("bbb");
+        TestClass c = new TestClass("ccc");
 
-        list.remove(6);
+        list.add(a);
+        list.add(b);
+        list.add(c);
 
+//        list.remove();
+        list.remove(b);
         list.printList();
     }
 }

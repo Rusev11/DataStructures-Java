@@ -94,6 +94,34 @@ public class DynamicList {
 
     }
 
+    public void remove(Object item) {
+        if (head == null) {
+            System.out.println("The list is empty. Nothing is removed.");
+            return;
+        }
+        Node currentNode = head;
+        if (currentNode.element.equals(item)) {
+            this.remove();
+        }
+
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+            if (currentNode.element.equals(item)) {
+                if (currentNode == tail) {
+                    tail = currentNode.prev;
+                    tail.next = null;
+                    count--;
+                    return;
+                }
+
+                currentNode.prev.next = currentNode.next;
+                currentNode.next.prev = currentNode.prev;
+                count--;
+                return;
+            }
+        }
+    }
+
     public void printList() {
         Node currentNode = head;
         if (currentNode == null) {
