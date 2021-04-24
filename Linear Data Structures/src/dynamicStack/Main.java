@@ -10,6 +10,8 @@ public class Main {
 //        System.out.println(stack.pop());
 //        stack.print();
 //        System.out.println(stack.peek());
-        System.out.println(stack.size());
+        stack.clear();
+        stack.push(7);
+        System.out.println(stack.pop());
     }
 }

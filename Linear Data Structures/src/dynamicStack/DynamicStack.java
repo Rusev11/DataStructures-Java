@@ -37,24 +37,38 @@ public class DynamicStack<T> {
         tail = currentNode;
     }
 
-    public T pop (){
+    public T pop() {
         Node topNode = tail;
+        if (topNode.prev == null) {
+            tail = null;
+            return topNode.element;
+        }
         tail = topNode.prev;
         tail.next = null;
         count--;
         return topNode.element;
     }
 
-    public T peek (){
+    public T peek() {
         return tail.element;
     }
 
-    public int size(){
+    public int size() {
         return count;
+    }
+
+    public void clear() {
+        head = null;
+        tail = null;
+        count = 0;
     }
 
     public void print() {
         Node currentNode = tail;
+        if (currentNode == null) {
+            System.out.println("The stack is empty");
+            return;
+        }
         while (currentNode.prev != null) {
             System.out.println(currentNode.element);
             currentNode = currentNode.prev;
