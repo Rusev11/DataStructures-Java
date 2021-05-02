@@ -33,6 +33,7 @@ public class DequeImplementation<T> extends DynamicStack {
         currentNode.addOrder = true;
         if (head == null) {
             head = currentNode;
+            tail = head;
             return;
         }
         currentNode.next = head;
@@ -54,6 +55,18 @@ public class DequeImplementation<T> extends DynamicStack {
             return;
         }
         head = head.next;
+    }
+
+    public void addLast(T object) {
+        Node currentNode = new Node(object);
+        currentNode.addOrder = false;
+        if (head == null) {
+            head = currentNode;
+            tail = currentNode
+            return;
+        }
+        currentNode.prev = tail;
+        tail = currentNode;
     }
 
 }
