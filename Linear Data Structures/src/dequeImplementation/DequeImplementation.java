@@ -69,4 +69,18 @@ public class DequeImplementation<T> extends DynamicStack {
         tail = currentNode;
     }
 
+    public void printList() {
+        if (head == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        Node currentNode = head;
+        System.out.println(currentNode.element);
+        while(currentNode.next!=null){
+            currentNode = currentNode.next;
+            System.out.println(currentNode.element);
+        }
+        System.out.println(currentNode.element);
+    }
+
 }
